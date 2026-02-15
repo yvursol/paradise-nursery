@@ -1,12 +1,10 @@
-import './App.css';
+const [showProducts, setShowProducts] = useState(false);
 
-function App() {
-  return (
-    <div className="landing">
-      <h1>Paradise Nursery</h1>
-      <button>Get Started</button>
-    </div>
-  );
-}
-
-export default App;
+{!showProducts ? (
+  <div className="landing">
+    <h1>Paradise Nursery</h1>
+    <button onClick={() => setShowProducts(true)}>Get Started</button>
+  </div>
+) : (
+  <ProductList />
+)}
